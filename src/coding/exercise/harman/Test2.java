@@ -6,7 +6,7 @@ public class Test2 {
 		
 		int arr[] = {1,2,3,4,5};
 		int n = arr.length;
-		int result = binarySearch(arr,0,n-1,9);
+		int result = binarySearch(arr,0,n-1,3);
 		
 		if(result == -1) {
 			System.out.println("Not Found");

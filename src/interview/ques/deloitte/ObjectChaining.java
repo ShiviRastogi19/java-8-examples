@@ -19,9 +19,9 @@ public class ObjectChaining {
 		University u1 = new University(Arrays.asList(new Employee(Arrays.asList(d1,d2))));
 		
 		
-		List<String> teacherIDList = u1.getEmployeeList().stream()
-		.map(emp -> emp.getDepartmentList())
-		.flatMap(List::stream)
+		List<String> teacherIDList = u1.getEmployeeList().stream()  //Stream<Emp>
+		.map(emp -> emp.getDepartmentList())  //Stream<Emp> to Stream<List<Dept>>
+		.flatMap(List::stream)				  //Stream<Emp> to Stream<Dept>
 		.map(dept -> dept.getTeacherlist())
 		.flatMap(List::stream)
 		.map(Teacher::getId)
